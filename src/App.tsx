@@ -1,25 +1,70 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import theme from './theme';
+
+import {
+  makeStyles,
+  ThemeProvider,
+} from '@material-ui/core/styles';
+
+const useStyles = makeStyles(theme => ({
+  '@keyframes app-logo-spin': {
+    from: {
+      transform: 'rotate(0deg)',
+    },
+    to: {
+      transform: 'rotate(360deg)',
+    },
+  },
+  app: {
+    textAlign: 'center',
+  },
+  header: {
+    backgroundColor: '#282c34',
+    minHeight: '100vh',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontSize: 'calc(10px + 2vmin)',
+    color: 'white',
+  },
+  logo: {
+    height: '40vmin',
+    pointerEvents: 'none',
+  },
+  '@media (prefers-reduced-motion: no-preference)': {
+    logo: {
+      animation: '$app-logo-spin infinite 20s linear',
+    },
+  },
+  link: {
+    color: '#61dafb',
+  },
+}));
 
 function App() {
+  const classes = useStyles();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className={classes.app}>
+        <header className={classes.header}>
+          <img src={logo} className={classes.logo} alt="logo" />
+          <p>
+            Edit <code>src/App.tsx</code> and save to reload.
+          </p>
+          <a
+            className={classes.link}
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn React
+          </a>
+        </header>
+      </div>
+    </ThemeProvider>
   );
 }
 
