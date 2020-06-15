@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+![](https://github.com/naush/material-ui-ts-example/workflows/Node.js%20CI/badge.svg)
+
 ## Available Scripts
 
 In the project directory, you can run:
