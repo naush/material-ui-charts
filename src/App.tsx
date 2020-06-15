@@ -1,4 +1,5 @@
 import React from 'react';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import logo from './logo.svg';
 import theme from './theme';
 
@@ -48,6 +49,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
+      <CssBaseline />
       <div className={classes.app}>
         <header className={classes.header}>
           <img src={logo} className={classes.logo} alt="logo" />
