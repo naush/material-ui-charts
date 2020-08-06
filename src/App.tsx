@@ -32,25 +32,33 @@ const useStyles = makeStyles(() => ({
     color: 'white',
   },
   container: {
-    width: '60%',
-    margin: theme.spacing(4, 0),
+    width: '80%',
+    margin: theme.spacing(8, 0),
+    alignItems: 'center',
 
     [theme.breakpoints.down('sm')]: {
-      width: '80%',
+      width: '100%',
       margin: theme.spacing(4, 0),
     },
   },
   title: {
-    margin: theme.spacing(0, 0, 4),
+    margin: theme.spacing(0, 0, 8),
   },
   examples: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-around',
+    width: '100%',
   },
   bars: {
     flexDirection: 'column',
     minHeight: theme.spacing(32),
+    width: '70%',
+
+    [theme.breakpoints.down('sm')]: {
+      width: '80%',
+      margin: theme.spacing(4, 0),
+    },
   },
 }));
 
